@@ -1,0 +1,36 @@
+plugins {
+    id 'net.fabricmc.fabric-loom'
+}
+
+def mcVersion = '26.1.2'
+
+version = "${mod_version}+26.1-26.3"
+group = maven_group
+base { archivesName = archives_base_name }
+
+sourceSets.main.java.srcDir rootProject.file('common/src/main/java')
+sourceSets.main.resources.srcDir rootProject.file('common/src/main/resources')
+
+dependencies {
+    minecraft "com.mojang:minecraft:${mcVersion}"
+    implementation "net.fabricmc:fabric-loader:${loader_version}"
+}
+
+processResources {
+    def resourceProperties = [
+        version: project.version,
+        minecraft_version: '>=26.1 <26.4',
+        java_version: 25
+    ]
+    inputs.properties resourceProperties
+    filesMatching(['fabric.mod.json', 'mcci-cloak-hider.mixins.json']) {
+        expand resourceProperties
+    }
+}
+
+tasks.withType(JavaCompile).configureEach { it.options.release = 25 }
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_25
+    targetCompatibility = JavaVersion.VERSION_25
+}

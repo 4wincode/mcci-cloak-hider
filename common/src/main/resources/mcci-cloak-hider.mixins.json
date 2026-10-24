@@ -1,0 +1,15 @@
+{
+    "required": true,
+    "minVersion": "0.8",
+    "package": "in.fourw.mccicloakhider.mixin",
+    "compatibilityLevel": "JAVA_${java_version}",
+    "client": [
+        "EntityRenderDispatcherMixin"
+    ],
+    "injectors": {
+        "defaultRequire": 1
+    },
+    "overwrites": {
+        "requireAnnotations": true
+    }
+}

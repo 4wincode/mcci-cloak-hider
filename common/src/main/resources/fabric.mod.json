@@ -1,0 +1,23 @@
+{
+    "schemaVersion": 1,
+    "id": "mcci-cloak-hider",
+    "version": "${version}",
+    "name": "MCCI Cloak Hider",
+    "description": "Hides your own cloak in first person on MCC Island.",
+    "authors": ["4win"],
+    "contact": {
+        "homepage": "https://modrinth.com/mod/mcci-cloak-hider",
+        "sources": "https://github.com/4wincode/mcci-cloak-hider",
+        "issues": "https://github.com/4wincode/mcci-cloak-hider/issues"
+    },
+    "license": "Apache-2.0",
+    "icon": "assets/mcci-cloak-hider/icon.png",
+    "environment": "client",
+    "mixins": [
+        "mcci-cloak-hider.mixins.json"
+    ],
+    "depends": {
+        "fabricloader": ">=0.18.4",
+        "minecraft": "${minecraft_version}"
+    }
+}

@@ -1,0 +1,14 @@
+pluginManagement {
+    repositories {
+        maven {
+            name = 'Fabric'
+            url = 'https://maven.fabricmc.net/'
+        }
+        gradlePluginPortal()
+    }
+}
+
+rootProject.name = 'mcci-cloak-hider'
+
+include 'mc-1.21.11'
+include 'mc-26'
